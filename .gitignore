@@ -1,23 +1,11 @@
 # 가상환경
 .venv/
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*.so
 
 # 환경변수
-# Environments
 .env
-.venv
-env/
-venv/
+
 
 # 자동화 브라우저 프로필
-# Project-specific directories and files
-downloads/
 automation_chrome_profile/
+downloads/
 __pycache__/
-
-# IDE / Editor specific
-.idea/
-.vscode/

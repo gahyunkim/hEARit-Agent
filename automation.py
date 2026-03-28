@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from rich.console import Console
-from config import NOTEBOOK_URL, ADMIN_URL, PROFILE_PATH, ADMIN_ID, ADMIN_PW
+from config import NOTEBOOK_URL, ADMIN_URL, PROFILE_PATH, ADMIN_ID, ADMIN_PW, CUSTOM_AUDIO_PROMPT
 
 console = Console()
 
@@ -114,7 +114,7 @@ def create_podcast_and_download(txt_path, project_dir):
         driver.execute_script("arguments[0].click();", audio_btn)
         time.sleep(4)
         
-        custom_prompt = "'안녕하세요'라고 시작하지 마세요. '오늘'이라는 단어는 쓰지 마세요."
+        custom_prompt = CUSTOM_AUDIO_PROMPT
         textareas = wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "textarea")))
         for ta in reversed(textareas):
             if ta.is_displayed():

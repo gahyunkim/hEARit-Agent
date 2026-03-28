@@ -11,3 +11,4 @@ NOTEBOOK_URL = os.environ.get("NOTEBOOK_LM_URL", "https://notebooklm.google.com/
 PROFILE_PATH = os.path.abspath(os.environ.get("CHROME_PROFILE_NAME", "automation_chrome_profile"))
 ADMIN_ID = os.environ.get("ADMIN_ID")
 ADMIN_PW = os.environ.get("ADMIN_PW")
+CUSTOM_AUDIO_PROMPT = os.environ.get("CUSTOM_AUDIO_PROMPT")
