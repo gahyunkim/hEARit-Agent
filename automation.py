@@ -41,9 +41,9 @@ def quit_driver():
         _driver.quit()
         _driver = None
 
-def create_podcast_and_download(txt_path, project_dir):
-    """NotebookLM에 소스를 업로드하고 생성 대기 후 오디오를 다운로드합니다."""
-    driver = get_driver(download_path=project_dir)
+def request_podcast_creation(txt_path):
+    """NotebookLM에 소스를 업로드하고 오디오 생성을 요청합니다."""
+    driver = get_driver()
     wait = WebDriverWait(driver, 60)
     try:
         driver.get(NOTEBOOK_URL)
@@ -130,6 +130,16 @@ def create_podcast_and_download(txt_path, project_dir):
                 break
                 
         console.print("[bold green]✅ 팟캐스트 생성이 시작되었습니다![/bold green]")
+    except Exception as e:
+        console.print(f"[red]❌ 팟캐스트 생성 요청 중 에러 발생: {e}[/red]")
+        raise
+
+def wait_and_download_podcast(project_dir):
+    """생성된 오디오를 대기하고 다운로드합니다."""
+    driver = get_driver(download_path=project_dir)
+    wait = WebDriverWait(driver, 60)
+    try:
+        # The browser is already on the page where generation was started.
         
         console.print("[yellow]⏳ 재생 버튼이 뜰 때까지 대기합니다... (최대 30분)[/yellow]")
         start = time.time()
@@ -167,10 +177,10 @@ def create_podcast_and_download(txt_path, project_dir):
                 return audio_path
             time.sleep(5)
     except Exception as e:
-        console.print(f"[red]❌ 에러 발생: {e}[/red]")
+        console.print(f"[red]❌ 오디오 다운로드 중 에러 발생: {e}[/red]")
         raise
 
-def upload_to_admin(audio_file):
+def deploy_to_admin_dashboard(audio_file):
     """관리자 페이지에 완성된 오디오를 업로드합니다."""
     driver = get_driver()
     wait = WebDriverWait(driver, 60)

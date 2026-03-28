@@ -1,0 +1,8 @@
+# hEARit-Agent Dependencies
+google-genai>=0.4.0
+selenium>=4.29.0
+webdriver-manager>=4.0.2
+rich>=13.9.4
+python-dotenv>=1.0.1
+# 오디오 처리를 위한 유틸리티가 필요할 경우
+ffmpy>=0.5.0

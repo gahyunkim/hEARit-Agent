@@ -1,12 +1,17 @@
 # hEARit-Agent v2.0
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/gahyunkim/joigent/releases)
+[![Python](https://img.shields.io/badge/Python-3.13+-yellow.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![Selenium](https://img.shields.io/badge/tool-Selenium-413151)
+![Gemini](https://img.shields.io/badge/AI-Gemini-blue)
 
 AI와 웹 자동화를 사용하여 최신 IT 트렌드 및 다양한 카테고리의 기술 팟캐스트를 생성하는 자동화 에이전트입니다.
 
 ## 개요
 
-hEARit-Agent는 IT 전문 팟캐스트의 콘텐츠 제작 전체 과정을 자동화하는 Python 기반 도구입니다. 
-Google Gemini API를 사용하여 주제 선정 및 대본을 생성하고, Google의 NotebookLM을 통해 텍스트를 음성으로 변환하며, 
-Selenium을 활용하여 원본 자료 업로드부터 최종 오디오 파일의 관리자 대시보드 게시까지 모든 웹 기반 상호작용을 자동화합니다.
+hEARit-Agent는 IT 전문 팟캐스트의 콘텐츠 제작 전체 과정을 자동화하는 Python 기반 도구입니다.   
+Google Gemini API를 사용하여 주제 선정 및 대본을 생성하고, Google의 NotebookLM을 통해 텍스트를 음성으로 변환하며,   
+Selenium을 활용하여 원본 자료 업로드부터 최종 오디오 파일의 관리자 대시보드 게시까지 모든 웹 기반 상호작용을 자동화합니다.  
 
 ## 주요 기능
 
@@ -45,16 +50,8 @@ Selenium을 활용하여 원본 자료 업로드부터 최종 오디오 파일�
     ```
 
 3.  **의존성 설치:**
-    아래 내용으로 `requirements.txt` 파일을 생성하고, 설치 명령어를 실행하세요.
-
-    **`requirements.txt`**
-    ```
-    google-generativeai
-    selenium
-    webdriver-manager
-    rich
-    python-dotenv
-    ```
+    아래 내용으로 `requirements.txt` 설치 명령어를 실행하세요.  
+    프로젝트 실행을 위해 필요한 의존성들을 모아놓은 파일입니다.
 
     ```bash
     pip install -r requirements.txt
@@ -110,6 +107,7 @@ joigent/
 ├── ai_service.py           # Gemini API와의 모든 상호작용 처리
 ├── automation.py           # 웹 자동화(Selenium) 로직 포함
 ├── utils.py                # 파일/시스템 작업을 위한 유틸리티 함수
+├── requirements.txt        # 프로젝트 의존성 관리를 위한 txt 파일
 ├── config.py               # 설정 변수 로드 및 제공
 └── README.md               # 프로젝트에 대한 설명
 ```
